@@ -18,5 +18,10 @@ class CartProvider extends ChangeNotifier {
     print ("deleted");
   }
 
+   clear( ) {
+    cartItemsList = [];
+     cartvalue =0 ;
+    notifyListeners();
+  }
 }
 

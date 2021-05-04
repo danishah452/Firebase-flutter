@@ -15,7 +15,26 @@ class _CartState extends State<Cart> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Cart"),
+        actions: [
+          IconButton(
+            icon:Icon(Icons.delete_forever),
+            onPressed: (){
+              Provider.of<CartProvider>(context, listen: false).clear(
+              );
+
+            },
+
+        //
+        // Provider.of<Orders>(context, listen: false).addOrder(
+        //   cart.items.values.toList(),
+        //   cart.totalAmount,
+        // );
+        // cart.clear();
+
+          )
+        ],
             ),
+
       body:Consumer<CartProvider>(
         builder: (context,data,child){
         return  ListView.builder(
